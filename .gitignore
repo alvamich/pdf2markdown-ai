@@ -1,0 +1,11 @@
+.venv/
+*.egg-info/
+__pycache__/
+.pytest_cache/
+*.pdf2md-work/
+work/
+*.pdf
+*.epub
+*_assets/
+*.quality.json
+.env

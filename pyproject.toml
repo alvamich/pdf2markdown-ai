@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pdf2markdown-ai"
+version = "0.3.0"
+description = "Resumable, low-resource PDF-to-Markdown conversion powered by MinerU"
+readme = "README.md"
+requires-python = ">=3.10,<3.14"
+license = { text = "MIT" }
+dependencies = ["pypdf>=5.0,<7", "pypdfium2>=4.30,<6", "six>=1.16,<2"]
+
+[project.optional-dependencies]
+mineru = ["mineru[pipeline]"]
+mineru-all = ["mineru[all]"]
+test = ["pytest>=8,<10"]
+
+[project.scripts]
+pdf2md-ai = "pdf2markdown_ai.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
